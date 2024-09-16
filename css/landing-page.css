@@ -57,6 +57,19 @@ body * {
     transition: 1s;
 }
 
+@media(max-width: 700px){
+    .front-page img[class="background high-quality"] {
+        display: none;
+    }
+}
+
+@media(min-width: 700px){
+    .front-page video[class="background low-quality"] {
+        display: none;
+    }
+}
+
+
 .front-page h2 {
     font-size: 30px;
     font-weight: 300;
