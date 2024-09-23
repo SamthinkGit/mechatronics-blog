@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Mechatronics Lab</title>
         <link rel="stylesheet" href="../css/navigation-page.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
         <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
     </head>
     <body>
@@ -19,13 +20,13 @@
                     </a>
                 </label>
                 <div class="navigation-box">
-                    <label for="switch">
+                    <label for="switch" class="md-loader" id="md-github">
                         <div class="report">
                             <p>GitHub</p>
                             <img src="../media/example-image.png">
                         </div>
                     </label>
-                    <label for="switch">
+                    <label for="switch" class="md-loader" id="md-test">
                         <div class="report">
                             <p>InkScape</p>
                             <img src="../media/example-image.png">
@@ -67,6 +68,10 @@
                             <img src="../media/example-image.png">
                         </div>
                     </label>
+                    <div class="report-content" id="md-container">
+                        <p>
+                        </p>
+                    </div>
                 </div>
             </nav>
         </main>
@@ -77,4 +82,6 @@
             </a>
         </footer>
     </body>
+    <script type="module" src="../scripts/markdown.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 </html>

@@ -97,6 +97,10 @@ nav  {
     display: none;
 }
 
+.checkbox:checked ~ .navigation-box{
+    background-color: rgba(0, 0, 0, 0.836) ;
+}
+
 .checkbox:checked ~ .navigation-box .report{
     width: 30px;
     height: 30px;
@@ -114,6 +118,11 @@ nav  {
 
 .checkbox:not(:checked) ~ .dashboard-label{
     opacity: 0;
+}
+
+.checkbox:not(:checked) ~ .navigation-box .report-content{
+    height: 0;
+    overflow: hidden;
 }
 
 .report img {
@@ -155,6 +164,13 @@ nav  {
     transition: 0.2s ease;
 }
 
+.report-content {
+    width: 90%;
+    overflow:visible;
+}
+.report-content * {
+    max-width: 100% ;
+}
 
 .navigation-box {
     height: 80vh;
