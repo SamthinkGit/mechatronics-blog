@@ -1,5 +1,7 @@
 :root {
     --background-dark-blue: rgb(18, 18, 39);
+    --soft-white: #ffffff10;
+    --bright-white: #ffffff90;
 }
 
 * {
@@ -137,6 +139,9 @@ body * {
     width: 90px;
     border: 0;
     transition: 0.5s;
+    border-color: black;
+    text-align: center;
+    align-content: center;
 }
 
 .dashboard-button:hover {
@@ -144,6 +149,12 @@ body * {
     margin-top: 80px;
     transition: 0.5s;
     background-color: #ffffff10;
+}
+
+.dashboard-button:active {
+    /* background-color:  #8236ca90; */
+    border: 1px solid rgb(98, 75, 201);
+    transition: 0.1s;
 }
 
 .dashboard-arrow {

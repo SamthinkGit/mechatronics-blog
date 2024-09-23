@@ -1,0 +1,244 @@
+:root {
+    --soft-white: rgba(245, 245, 245, 0.438);
+    --soft-magenta: rgb(119, 0, 255);
+    --hard-magenta:rgba(255, 0, 255, 0.651);
+}
+
+* {
+    box-sizing: border-box;
+    /* border: 1px solid magenta; */
+    color: white;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0 ;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.background {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(1px) brightness(60%);
+}
+
+/* ------- TITLE -------- */
+.text-glow {
+    color: whitesmoke;
+    animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+  from {
+    text-shadow: 
+    0 0 10px #222, 
+    0 0 20px #222, 
+    0 0 30px #3966fa, 
+    0 0 40px #3966fa
+  }
+  to {
+    text-shadow: 
+    0 0 10px #999, 
+    0 0 20px #999, 
+    0 0 30px #a93bf3, 
+    0 0 40px #a93bf3 
+  }
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header h1 {
+    margin-top: 60px;
+    margin-bottom: 0;
+    font-size: 40px;
+    font-family: Arial;
+    font-weight: 600;
+}
+
+
+/* ------- Navigation -------- */
+
+nav  {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.report {
+    position: relative;
+    border: 1px solid white;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 0 10px var(--soft-magenta);
+    transition: 0.6s ease;
+    font-size: 1.5em;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox:checked ~ .navigation-box .report{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    font-size: 1em;
+}
+
+.checkbox:checked ~ .navigation-box .report > img{
+    opacity: 0;
+}
+
+.checkbox:checked ~ .navigation-box .report > p{
+    display: none;
+}
+
+.checkbox:not(:checked) ~ .dashboard-label{
+    opacity: 0;
+}
+
+.report img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.report:hover {
+    img {
+        filter: blur(1px) brightness(70%);
+    }
+    p {
+        opacity: 100;
+    }
+    transform: 1s ease;
+    cursor: pointer;
+}
+
+
+
+.report p {
+    width: 80%;
+    opacity: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-weight: 600;
+    font-size: inherit;
+    text-align: center;
+    text-shadow: 
+    0 0 2px black,
+    0 0 5px black,
+    0 0 10px var(--hard-magenta),
+    0 0 20px var(--hard-magenta),
+    0 0 30px var(--hard-magenta);
+    transition: 0.2s ease;
+}
+
+
+.navigation-box {
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 5vw;
+    row-gap: 10vh;
+    padding: 60px;
+    overflow: auto;
+    border: 1px solid var(--hard-magenta);
+    background-color: rgba(0, 0, 0, 0.418);
+    box-shadow: 0 0 10px var(--soft-magenta),
+    inset 0 0 10px black;
+}
+
+@media(min-width: 1000px) {
+    .navigation-box {
+        width: 60vw;
+    }
+}
+
+@media(max-width: 1000px) {
+    .navigation-box {
+        width: 100vw;
+    }
+}
+
+/*-------- Button ---------- */
+.dashboard-button {
+    position: absolute;
+    top: 40px;
+    background-color: transparent;
+    margin-top: 100px;
+    margin-bottom: -100px;
+    height: 90px;
+    width: 90px;
+    border: 0;
+    transition: 0.5s;
+    border-color: black;
+    text-align: center;
+    align-content: center;
+}
+
+.dashboard-button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #ffffff10;
+}
+
+.dashboard-button:active {
+    /* background-color:  #8236ca90; */
+    border: 1px solid rgb(98, 75, 201);
+    transition: 0.1s;
+}
+
+.dashboard-arrow {
+    height: 40%;
+    filter: invert(1);
+    transform: rotate(-90deg);
+}
+
+/* ------- FOOTER -------- */
+footer a {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    font-weight: 200;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: grey;
+    text-shadow: 0px 0px 5px black;
+    text-decoration: none;
+    --link-color: grey;
+}
+
+footer span {
+    color: var(--link-color);
+}
+
+footer a:hover {
+    --link-color: white;
+}
